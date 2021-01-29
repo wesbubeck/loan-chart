@@ -13,7 +13,7 @@ export const getData = async () => {
 					currentBalance: d.V1,
 				}));
 				resolve(formattedData);
-			}, 1000);
+			}, 2000);
 		} catch {
 			reject("something went wrong...");
 		}
