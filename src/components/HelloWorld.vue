@@ -18,7 +18,13 @@
 					@onFilterChange="addDataFilter"
 				/>
 			</div>
-			<button class="reset-button" @click="resetFilters">Reset Filters</button>
+			<button
+				v-show="shouldShowChart"
+				class="reset-button"
+				@click="resetFilters"
+			>
+				Reset Filters
+			</button>
 		</div>
 		<h1 v-if="!fetchingLoanData && errorFetching">
 			Oops! There was an error fetching data. Please refresh the page.
@@ -145,6 +151,7 @@ export default {
 			this.fetchData();
 		},
 		setChartDatasets() {
+			//Used push here easier to add multiple sets in the future
 			this.chartDatasets.push({
 				label: "Loan Balance by Grade",
 				borderColor: "rgba(75, 192, 192, 1)",

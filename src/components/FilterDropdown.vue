@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="filter-dropdown">
 		<select v-model="selectedFilter" @input="onFilterChange($event)">
 			<option v-for="filter in sortedFilters" :key="filter" :value="filter">{{
 				filter
@@ -50,4 +50,8 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped></style>
+<style scoped>
+.filter-dropdown {
+	margin-right: 5px;
+}
+</style>
